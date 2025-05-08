@@ -361,30 +361,8 @@
 							</div>
 						</div>
 					</div>				
-					<div class="col-md-12">
-						<div class="single-project-box">
-							<div class="project-thumb">
-								<img src="assets/images/resource/project22.jpg" alt="">
-							</div>
-							<div class="project-content">
-								<a href="#">Power Solutions for Business</a>
-								<p>Even a short power outage can cost a business thousands. With a Generac commercial backup system, you can avoid downtime and keep operations moving without interruption.</p>
-								<a class="project-button" href="#">View Project</a>
-							</div>
-						</div>
-					</div>				
-					<div class="col-md-12">
-						<div class="single-project-box">
-							<div class="project-thumb">
-								<img src="assets/images/resource/project3.webp" alt="">
-							</div>
-							<div class="project-content">
-								<a href="#">Industrial Generator Systems</a>
-								<p>Generac delivers reliable diesel and gaseous generator solutions engineered to meet diverse industrial needs and compliance standards—powering performance at any scale.</p>
-								<a class="project-button" href="#">View Project</a>
-							</div>
-						</div>
-					</div>				
+								
+				
 					<div class="col-md-12">
 						<div class="single-project-box">
 							<div class="project-thumb">
@@ -397,30 +375,8 @@
 							</div>
 						</div>
 					</div>				
-					<div class="col-md-12">
-						<div class="single-project-box">
-							<div class="project-thumb">
-								<img src="assets/images/resource/project22.jpg" alt="">
-							</div>
-							<div class="project-content">
-								<a href="#">Power Solutions for Business</a>
-								<p>Even a short power outage can cost a business thousands. With a Generac commercial backup system, you can avoid downtime and keep operations moving without interruption.</p>
-								<a class="project-button" href="#">View Project</a>
-							</div>
-						</div>
-					</div>				
-					<div class="col-md-12">
-						<div class="single-project-box">
-							<div class="project-thumb">
-								<img src="assets/images/resource/project3.webp" alt="">
-							</div>
-							<div class="project-content">
-								<a href="#">Industrial Generator Systems</a>
-								<p>Generac delivers reliable diesel and gaseous generator solutions engineered to meet diverse industrial needs and compliance standards—powering performance at any scale.</p>
-								<a class="project-button" href="#">View Project</a>
-							</div>
-						</div>
-					</div>						
+					
+								
 					<div class="col-md-12">
 						<div class="single-project-box">
 							<div class="project-thumb">
@@ -433,30 +389,8 @@
 							</div>
 						</div>
 					</div>				
-					<div class="col-md-12">
-						<div class="single-project-box">
-							<div class="project-thumb">
-								<img src="assets/images/resource/project22.jpg" alt="">
-							</div>
-							<div class="project-content">
-								<a href="#">Power Solutions for Business</a>
-								<p>Even a short power outage can cost a business thousands. With a Generac commercial backup system, you can avoid downtime and keep operations moving without interruption.</p>
-								<a class="project-button" href="#">View Project</a>
-							</div>
-						</div>
-					</div>				
-					<div class="col-md-12">
-						<div class="single-project-box">
-							<div class="project-thumb">
-								<img src="assets/images/resource/project3.webp" alt="">
-							</div>
-							<div class="project-content">
-								<a href="#">Industrial Generator Systems</a>
-								<p>Generac delivers reliable diesel and gaseous generator solutions engineered to meet diverse industrial needs and compliance standards—powering performance at any scale.</p>
-								<a class="project-button" href="#">View Project</a>
-							</div>
-						</div>
-					</div>			
+							
+							
 				</div>
 			</div>
 		</div>
@@ -481,37 +415,7 @@
 <!--==================================================-->
 <!-- Start Counter Area -->
 <!--==================================================-->
-<div class="counter-area">
-	<div class="container">
-		<div class="row upper">
-			<div class="col-lg-4 col-md-6">
-				<div class="single-counter-box">
-					<div class="counter-content">
-						<h4 class="counter">64</h4>
-						<p>Clients Around the World</p>
-					</div>
-				</div>
-			</div>			
-			<div class="col-lg-4 col-md-6">
-				<div class="single-counter-box">
-					<div class="counter-content">
-						<h4 class="counter">124</h4>
-						<p>Projects Completed</p>
-					</div>
-				</div>
-			</div>			
-			<div class="col-lg-4 col-md-6">
-				<div class="single-counter-box">
-					<div class="counter-content">
-						<h4 class="counter">244</h4>
-						<span>k</span>
-						<p>Square Feet</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
 <!--==================================================-->
 <!-- End Counter Area -->
 <!--==================================================-->
@@ -727,10 +631,9 @@
 							</div>
 						</div>
 						<div class="col-lg-5 col-md-12 col-sm-12">
-							<form action="https://formspree.io/f/xpwddovq"
-							method="POST">
+							<form id="subscribe-form">
 								<div class="newslatter-input-box">
-									<input type="text" name="Email" placeholder="Email Address" required>
+									<input type="email" name="email" placeholder="Email Address" required>
 									<div class="newslatter-button">
 										<button type="submit">Subscribe</button>
 									</div>
@@ -882,6 +785,54 @@
 
 	<!-- jquery js -->
 	<script src="assets/js/vendor/jquery-3.6.2.min.js"></script>
+
+	<script type="module">
+		// Firebase SDK imports
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+		import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
+	  
+		// Firebase config
+		const firebaseConfig = {
+		  apiKey: "AIzaSyABRGvWwRj3fDuHZozlwSWv7n1m3OsrR2M",
+		  authDomain: "website-database-53658.firebaseapp.com",
+		  projectId: "website-database-53658",
+		  storageBucket: "website-database-53658.appspot.com",
+		  messagingSenderId: "595434145332",
+		  appId: "1:595434145332:web:3c2985a2ec86d58d2bec61",
+		  measurementId: "G-384MKY8KWG"
+		};
+	  
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+		const db = getFirestore(app);
+	  
+		// Form submission
+	
+	
+		document.addEventListener("DOMContentLoaded", () => {
+		  const subscribeForm = document.getElementById("subscribe-form");
+	  
+		  subscribeForm.addEventListener("submit", async (e) => {
+			e.preventDefault();
+			const email = subscribeForm.email.value;
+	  
+			try {
+			  await addDoc(collection(db, "subscribers"), {
+				email,
+				timestamp: new Date()
+			  });
+	  
+			  alert("Thank you for subscribing!");
+			  subscribeForm.reset();
+			} catch (error) {
+			  console.error("Error subscribing: ", error);
+			  alert("Subscription failed. Please try again.");
+			}
+		  });
+		});
+	  </script>
 	<script src="assets/js/popper.min.js"></script>
 	<!-- bootstrap js -->
 	<script src="assets/js/bootstrap.min.js"></script>

@@ -197,7 +197,7 @@
 										<h1>Explore Our Full Line of Generac Generators</h1>
 									</div>
 									<div class="serivce-details-desc">
-										<p>When it comes to protecting what matters most, Generac leads the industry with innovative, efficient, and durable backup power systems. As an authorized dealer, we offer a complete range of models tailored to fit your home, business, or portable power needs. Whether you want whole-house protection or scalable commercial resilience, we’ll help you choose the right model, handle the installation, and keep it running at peak performance.</p>
+										<p>When it comes to protecting what matters most, Generac leads the industry with innovative, efficient, and durable backup power systems. As an authorized dealer, we offer a complete range of models tailored to fit your home, business, or portable power needs. Whether you want whole-house protection or scalable  resilience, we’ll help you choose the right model, handle the installation, and keep it running at peak performance.</p>
 		
 									</div>
 								</div>
@@ -306,47 +306,9 @@
 							</div>
 						</div>
 
-						<div class="col-lg-12" id="commercial">
-							<div class="service-details-content">
-								<div class="service-page-title2">
-									<h1>Commercial Generators</h1>
-								</div>
-								<div class="serivce-details-desc">
-									<p>Generac commercial generators are engineered to meet the demands of business continuity. From retail and healthcare to critical infrastructure, these systems provide scalable power, reliability, and round-the-clock support to ensure that your operations remain uninterrupted — even during extended outages.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							<div class="service-details-item">
-								<div class="service-details-thumb">
-									<img src="assets/images/resource/comGen1.png" alt="">
-								</div>
-								<div class="service-details-contents">
-								
-									<ul class="service-details-list">
-										<li><i class="bi bi-check-lg"></i>Scalable systems up to 150kW+</li>
-										<li><i class="bi bi-check-lg"></i>Custom-engineered solutions </li>
-
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					   <div class="col-lg-6 col-md-6 col-sm-6">
-							<div class="service-details-item">
-								<div class="service-details-thumb">
-									<img src="assets/images/resource/comGen2.png" alt="">
-								</div>
-								<div class="service-details-contents">
-						
-									<ul class="service-details-list">
-										<li><i class="bi bi-check-lg"></i>Seamless integration</li>
-										<li><i class="bi bi-check-lg"></i>24/7 monitoring and support</li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
+					
+			
+		
 
 
 
@@ -395,47 +357,7 @@
 
 
 						
-						<div class="col-lg-12" id="backup">
-							<div class="service-details-content">
-								<div class="service-page-title2">
-									<h1>Backup Battery Systems (PWRcell)</h1>
-								</div>
-								<div class="serivce-details-desc">
-									<p>Generac’s PWRcell battery storage system represents the future of clean, sustainable backup power. Designed for homes that use solar or want to reduce dependence on the grid, these systems store energy efficiently and deploy it when needed, providing silent, emission-free performance backed by smart load management.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							<div class="service-details-item">
-								<div class="service-details-thumb">
-									<img src="assets/images/resource/solar.png" alt="">
-								</div>
-								<div class="service-details-contents">
-								
-									<ul class="service-details-list">
-										<li><i class="bi bi-check-lg"></i>Clean energy storage for solar</li>
-										<li><i class="bi bi-check-lg"></i>Smart load management </li>
-
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					   <div class="col-lg-6 col-md-6 col-sm-6">
-							<div class="service-details-item">
-								<div class="service-details-thumb">
-									<img src="assets/images/resource/solar1.png" alt="">
-								</div>
-								<div class="service-details-contents">
-						
-									<ul class="service-details-list">
-										<li><i class="bi bi-check-lg"></i> Environmentally friendly and scalable</li>
-										<li><i class="bi bi-check-lg"></i>Seamless integration solar installations</li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
+		
 
 
 						<div class="col-lg-12" id="accessories">
@@ -524,7 +446,7 @@
 						<div class="widget-categories-menu">
 							<ul>
 								<li><a href="#residential">Residential Generators<span><i class="flaticon flaticon-right-arrow"></i></span> </a></li>
-								<li><a href="#commercial">Commercial Generators<span><i class="flaticon flaticon-right-arrow"></i></span> </a></li>
+
 								<li><a href="#portable">Portable Generators<span><i class="flaticon flaticon-right-arrow"></i></span> </a></li>
 								<li><a href="#backup">Backup Battery Systems (PWRcell)<span><i class="flaticon flaticon-right-arrow"></i></span></a></li><a href="service-details.html">
 								</a><li><a href="#accessories"></a><a href="#accessories">Featured Add-ons & Accessories<span><i class="flaticon flaticon-right-arrow"></i></span></a></li>
@@ -572,10 +494,9 @@
 							</div>
 						</div>
 						<div class="col-lg-5 col-md-12 col-sm-12">
-							<form action="https://formspree.io/f/xpwddovq"
-							method="POST">
+							<form id="subscribe-form">
 								<div class="newslatter-input-box">
-									<input type="text" name="Email" placeholder="Email Address" required>
+									<input type="email" name="email" placeholder="Email Address" required>
 									<div class="newslatter-button">
 										<button type="submit">Subscribe</button>
 									</div>
@@ -721,6 +642,53 @@
 
 
 
+<script type="module">
+	// Firebase SDK imports
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+	import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+	import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
+  
+	// Firebase config
+	const firebaseConfig = {
+	  apiKey: "AIzaSyABRGvWwRj3fDuHZozlwSWv7n1m3OsrR2M",
+	  authDomain: "website-database-53658.firebaseapp.com",
+	  projectId: "website-database-53658",
+	  storageBucket: "website-database-53658.appspot.com",
+	  messagingSenderId: "595434145332",
+	  appId: "1:595434145332:web:3c2985a2ec86d58d2bec61",
+	  measurementId: "G-384MKY8KWG"
+	};
+  
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+	const analytics = getAnalytics(app);
+	const db = getFirestore(app);
+  
+	// Form submission
+
+
+	document.addEventListener("DOMContentLoaded", () => {
+	  const subscribeForm = document.getElementById("subscribe-form");
+  
+	  subscribeForm.addEventListener("submit", async (e) => {
+		e.preventDefault();
+		const email = subscribeForm.email.value;
+  
+		try {
+		  await addDoc(collection(db, "subscribers"), {
+			email,
+			timestamp: new Date()
+		  });
+  
+		  alert("Thank you for subscribing!");
+		  subscribeForm.reset();
+		} catch (error) {
+		  console.error("Error subscribing: ", error);
+		  alert("Subscription failed. Please try again.");
+		}
+	  });
+	});
+  </script>
 
 
 

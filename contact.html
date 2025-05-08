@@ -189,8 +189,7 @@
 					<div class="contact_title pb-4">
 						<h3>Get In Touch</h3>
 					</div>
-					<form   action="https://formspree.io/f/xpwddovq"
-					method="POST" method="POST" id="dreamit-form">
+					<form   id="contact-form">
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form_box mb-30">
@@ -302,10 +301,9 @@
 							</div>
 						</div>
 						<div class="col-lg-5 col-md-12 col-sm-12">
-							<form action="https://formspree.io/f/xpwddovq"
-							method="POST">
+							<form id="subscribe-form">
 								<div class="newslatter-input-box">
-									<input type="text" name="Email" placeholder="Email Address" required>
+									<input type="email" name="email" placeholder="Email Address" required>
 									<div class="newslatter-button">
 										<button type="submit">Subscribe</button>
 									</div>
@@ -490,7 +488,84 @@
 	<script src="assets/js/jquery.barfiller.js"></script>
 	<!-- barfiller -->
 	<script src="assets/js/scrollCue.min.js"></script>
+	<script type="module">
+		// Firebase SDK imports
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+		import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
+	  
+		// Firebase config
+		const firebaseConfig = {
+		  apiKey: "AIzaSyABRGvWwRj3fDuHZozlwSWv7n1m3OsrR2M",
+		  authDomain: "website-database-53658.firebaseapp.com",
+		  projectId: "website-database-53658",
+		  storageBucket: "website-database-53658.appspot.com",
+		  messagingSenderId: "595434145332",
+		  appId: "1:595434145332:web:3c2985a2ec86d58d2bec61",
+		  measurementId: "G-384MKY8KWG"
+		};
+	  
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+		const db = getFirestore(app);
+	  
+		// Form submission
+		document.addEventListener("DOMContentLoaded", () => {
+		  const form = document.getElementById("contact-form");
+	  
+		  form.addEventListener("submit", async (e) => {
+			e.preventDefault();
+	  
+			const name = form.name.value;
+			const email = form.email.value;
+			const phone = form.phone.value;
+			const generatorType = form.web.value;
+			const message = form.message.value;
+	  
+			try {
+			  await addDoc(collection(db, "messages"), {
+				name,
+				email,
+				phone,
+				generatorType,
+				message,
+				timestamp: new Date()
+			  });
+	  
+			  alert("Message sent successfully!");
+			  form.reset();
+			} catch (error) {
+			  console.error("Error sending message: ", error);
+			  alert("Failed to send message. Please try again.");
+			}
+		  });
+		});
 
+		document.addEventListener("DOMContentLoaded", () => {
+		  const subscribeForm = document.getElementById("subscribe-form");
+	  
+		  subscribeForm.addEventListener("submit", async (e) => {
+			e.preventDefault();
+			const email = subscribeForm.email.value;
+	  
+			try {
+			  await addDoc(collection(db, "subscribers"), {
+				email,
+				timestamp: new Date()
+			  });
+	  
+			  alert("Thank you for subscribing!");
+			  subscribeForm.reset();
+			} catch (error) {
+			  console.error("Error subscribing: ", error);
+			  alert("Subscription failed. Please try again.");
+			}
+		  });
+		});
+	  </script>
+
+	  
 </body>
 
 </html>
