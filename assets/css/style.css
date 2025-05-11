@@ -309,7 +309,7 @@ ul.sub-menu li:hover a span {
 }
 
 .slide-inner.slide-bg-image.two{
-    background: url(../images/slider/hero-bg22.jpg);
+    background: url(../images/slider/Adobe\ Express\ -\ file\ \(14\).png);
 }
 
 .hero-slider .slide-inner {
@@ -629,7 +629,7 @@ p.about-desc {
 /*section-title*/
 .section-title h1 {
     font-size: 80px;
-    line-height: 52px;
+    line-height: 72px;
     text-transform: uppercase;
     color: #0a1027;
     font-weight: 700;
@@ -958,7 +958,7 @@ a.project-button {
 }
 .owl-prev:before {
     position: absolute;
-    content: "NEXT";
+    content: "PREV";
     right: 17px;
     top: 0;
 }
@@ -978,7 +978,7 @@ a.project-button {
 }
 .owl-next:after {
     position: absolute;
-    content: "PRVE";
+    content: "NEXT";
     left: 17px;
     top: 0;
 }
